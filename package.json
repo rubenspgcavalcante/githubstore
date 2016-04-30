@@ -9,6 +9,7 @@
     "is_js": "^0.8.0",
     "mongoose": "^4.4.14",
     "node-glob-loader": "0.0.15",
+    "octonode": "^0.7.5",
     "q": "^1.4.1"
   }
 }

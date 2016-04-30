@@ -1,13 +1,20 @@
 var Q = require('q');
+var is = require('is_js');
+
 var router = require('./router-provider');
 var ControllerFactory = require('./controller-factory');
-module.exports = REST;
 
-REST.$injections = {};
-function REST(Constructor, basepath) {
+module.exports = rest;
+function rest(Constructor, basepath) {
+    if(is.not.function(Constructor)){
+        throw new TypeError("Invalid REST controller. Needs to be a constructor function.");
+    }
+    if(is.not.string(basepath)){
+        throw new TypeError("Please pass the rest base-path argument");
+    }
+
     var controllerFactory = new ControllerFactory();
     var controller = controllerFactory.build(Constructor);
-    REST.$injections[basepath] = controller;
 
     var _respondRequest = function (promise, res) {
         Q.when(promise)
