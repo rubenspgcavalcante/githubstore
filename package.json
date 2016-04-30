@@ -1,0 +1,14 @@
+{
+  "name": "GithubStore",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "is_js": "^0.8.0",
+    "mongoose": "^4.4.14",
+    "node-glob-loader": "0.0.15",
+    "q": "^1.4.1"
+  }
+}
