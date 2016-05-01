@@ -7,6 +7,7 @@ function GHUserFactory() {
     
     this.build = function (userInfo) {
         return new GHUser({
+            id: userInfo.id,
             name: userInfo.name,
             login: userInfo.login,
             avatarUrl: userInfo.avatar_url,
